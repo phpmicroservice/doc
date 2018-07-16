@@ -18,23 +18,6 @@ services:
     working_dir: /var/www/html/
     # command: /bin/bash -c "composer update; php start.php;"
     command: php start/start.php
-  pms_config: 
-    image: daocloud.io/1514582970/pms_docker_php:cli71_swoole_phalcon 
-    privileged: false
-    restart: 'no'
-    volumes:
-    - /home/saisai/www/phpmicroservice/pms_config/:/var/www/html/
-    ports:
-    - 9502
-    tty: true
-    environment:
-    - APP_SECRET_KEY=9310FBCjxfycXLVMzbKOAptEpTVuiOch
-    - REGISTER_SECRET_KEY=8WOUb9tFBw6BNuM8
-    - REGISTER_ADDRESS=pms_register
-    - REGISTER_PORT=9502
-    working_dir: /var/www/html/
-    # command: sh start.sh
-    command: php start/start.php
   pms_proxy: 
     image: daocloud.io/1514582970/pms_docker_php:cli71_swoole_phalcon 
     privileged: false
