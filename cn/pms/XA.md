@@ -74,7 +74,7 @@ $task_data = [
     ],
     'tx_name' => 'ademo'
 ];
-$connect = $this->connect;
+$connect = $this->counnect;
 $this->swoole_server->task($task_data, -1, function ($ser, $wid, $re) use ($connect) {
     var_dump($re);
     $connect->send_succee($re);
